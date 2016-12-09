@@ -2,10 +2,26 @@
  * Created by sloon on 02/12/2016.
  */
 // On mouse-over, execute myFunction
-function myCheckbox() {
-    document.getElementById("myCheck").click(); // Click on the checkbox
+function myHoverButton() {
+    window.location.href = 'Home.html';
 }
 
-function myHoverButton() {
+function searchLists() {
+    window.location.href = 'Home.html';
+}
+
+function addList() {
+    window.location.href = 'Home.html';
+}
+
+function removeList() {
+    window.location.href = 'Home.html';
+}
+
+function changeList() {
+    window.location.href = 'Home.html';
+}
+
+function moveList() {
     window.location.href = 'Home.html';
 }

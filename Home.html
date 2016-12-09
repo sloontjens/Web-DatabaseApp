@@ -6,26 +6,17 @@
 </head>
 <body>
     <script src="myscripts.js"></script>
+
     <div>
-    <p>random links</p>
-    <a href="https://www.google.nl">google</a>
-    <a href="https://www.google.nl">google</a>
-    <a href="https://www.google.nl">google</a>
-    <a href="https://www.google.nl">google</a>
+    <button type="button" onclick="addList()">Add</button>          <br />
+    <button type="button" onclick="changeList()">Change</button>    <br />
+    <button type="button" onclick="removeList()">Remove</button>
 </div>
 
-<div>
-    <p>random button</p>
-    <button type="button" onclick="ButtonPress()">Click Me!</button>
-</div>
+    <?php echo date('l, F jS, Y'); ?>
 
 <div>
-    <p>random super annoying checkbox</p>
-    <input type="checkbox" id="myCheck" onmouseover="myCheckbox()" onclick="alert('clicked')">
-</div>
-
-<div>
-    <p>Contact info;<br />A.Schaap, S.Loontjens</p>
+    <p>Lists</p>
 </div>
 
 </body>
