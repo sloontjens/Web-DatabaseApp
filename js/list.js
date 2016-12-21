@@ -20,11 +20,10 @@ function Todo(name, priority, duedate) {
     todo_list.push(this);
 }
 
-
 /**
- * Adds an textual input item to the list and a button to remove it.
+ * Adds an textual input item to the n-th list and a button to remove it.
  */
-function addTodo() {
+function addTodo(n) {
 
     var name = document.getElementById("name").value;
     var priority = document.getElementById("priority").value;
@@ -37,6 +36,8 @@ function addTodo() {
     }
 
     var node = document.createElement("li");
+    var node2 = addStatus();
+
     if (todo.duedate != null){
             node.innerHTML = todo.priority + " [" + todo.name + "] Due: " + todo.duedate;
     } else {
@@ -44,47 +45,87 @@ function addTodo() {
     }
 
     // Adds a remove button to the list
-    var node2 = document.createElement("input");
-    node2.type = "button";
-    node2.onclick = function () {
+    var node3 = document.createElement("input");
+    node3.type = "button";
+    node3.onclick = function () {
         document.getElementById("myList").removeChild(node);
     };
-    node2.value = "Remove this element";
+    node3.value = "Remove this element";
+    node.appendChild(node3);
+    document.getElementsByTagName("ul").item(n-1).appendChild(node);
     node.appendChild(node2);
-    document.getElementById("myList").appendChild(node);
+
+}
+
+function addStatus() {
+    var span = document.createElement("span");
+    var todo = "[TODO]";
+    var done = "[DONE!]";
+    span.innerHTML = todo;
+    span.onclick = function () {
+        var temp = done;
+        done = todo;
+        todo = temp;
+        span.innerHTML = temp;
+    };
+    return span;
 }
 
 /**
- * @param ul The unsorted list that you want to sort on duedate.
+ * Creates a new list
  */
-function sortTodo_duedate(ul) {
+function newList() {
+    var node = document.createElement("ul");
+    var n = document.getElementsByTagName("ul").length+1;
+    node.innerHTML = "List " + n;
+    var node2 = document.createElement("div");
+    node2.style.border = "solid thin";
+    node2.style.float = "left";
+    node2.style.width = "30%";
+    node2.style.margin = "10px";
+    node2.style.textAlign = "left";
+    node2.appendChild(node);
+    document.getElementById("content").appendChild(node2);
+
+
 }
 
-
+/**
+ * onclick function for ENTER key
+ */
 function EnterButton() {
     if (event.keyCode == 13){
-        addTodo();
+        addTodo(function () {
+            for (i=0; i<document.getElementsByName("list").length; i++) {
+                if (document.getElementsByName("list").item(i).checked = true) {
+                    return document.getElementsByName("list").item(i);
+                }
+            }
+        });
     }
 }
 
-
-function clearList() {
+/**
+ * Clears the n-th list.
+ * @param n
+ */
+function clearList(n) {
     var ub = document.getElementById("myList").childElementCount;
-    for (var i = 0; i < ub+1; i++){
-        document.getElementById("myList").removeChild(document.getElementById("myList").firstChild);
+    for (var i = 0; i < ub; i++){
+        document.getElementById("myList").removeChild(document.getElementsByTagName("ul").item(n).lastChild);
     }
 }
 
-
-/* Set the width of the side navigation to 250px */
-function openNav() {
-    document.getElementById("navbar").style.height = "50px";
-    document.getElementById("main").style.marginTop = "50px";
+/**
+ * Opens the dropdown bar
+ */
+function openDropDown() {
+    document.getElementById("dropdown").style.height = "25px";
+    document.getElementById("main").style.marginTop = "25px";
 }
 
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-    document.getElementById("navbar").style.height = "50px";
-    document.getElementById("main").style.marginTop = "50px";
+function closeDropDown() {
+    document.getElementById("dropdown").style.height = "25px";
+    document.getElementById("main").style.marginTop = "25px";
 
 }

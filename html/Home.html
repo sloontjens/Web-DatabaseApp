@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <style>
 
-    .navbar {
-        height: 0; /* 100% Full-height */
-        width: 100%; /* 0 width - change this with JavaScript */
-        position: fixed; /* Stay in place */
+    .dropdown {
+        height: 0; /* Changes with JS */
+        width: 100%;
+        position: inherit; /* Stay in place */
         z-index: 1; /* Stay on top */
         top: 0;
         left: 0;
         overflow-x: hidden; /* Disable horizontal scroll */
-        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+        transition: 0.5s;
         padding-top: 3px;
     }
 
@@ -23,23 +23,26 @@
     <title>HomeScreen</title>
 </head>
 <body>
-
-<div id="navbar" class="navbar">
-    <a href="" class="closebtn" onclick="closeNav()">&times;</a>
+<div style="width: 50%; margin: auto; border: solid thin; text-align: center; padding: 10px; overflow: hidden" id="content">
+<div id="dropdown" class="dropdown">
+    <input type="radio" name="list" value="1" />List 1
+    <input type="radio" name="list" value="2" />List 2
+    <a href="" class="closebtn" onclick="closeDropDown()">&times;</a>
     <input type="text" id="name" onkeydown="EnterButton()"/>
     <input type="number" id="priority" onkeydown="EnterButton()"/>
     <input type="date" id="duedate" onkeydown="EnterButton()"/>
 </div>
 
-    <div id="main">
-        <button type="button" onclick="openNav()">Add new input</button><br />
-        <button type="button" onclick="clearList()">Clear list</button>
+    <div id="main" style="margin: auto; width: inherit; border: solid thin;">
+        <button type="button" onclick="openDropDown()">Add new input</button>
+        <button type="button" onclick="clearList(0)">Clear list</button>
+        <button type="button" onclick="newList()">New list</button>
     </div>
 
-<div>
-    <ul id="myList">Lists</ul>
+<div style="border: solid thin; float: left; width: 30%; margin: 10px; text-align: left;" id="list1">
+    <ul id="myList">List 1</ul>
 </div>
-
+</div>
     <script src="../js/list.js"></script>
 </body>
 </html>
