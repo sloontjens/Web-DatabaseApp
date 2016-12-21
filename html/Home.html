@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+
+    .navbar {
+        height: 0; /* 100% Full-height */
+        width: 100%; /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        top: 0;
+        left: 0;
+        overflow-x: hidden; /* Disable horizontal scroll */
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+        padding-top: 3px;
+    }
+
+    #main {
+        transition: margin-top .5s;
+    }
+</style>
 <head>
     <meta charset="UTF-8">
     <title>HomeScreen</title>
 </head>
 <body>
-    <script src="../js/list.js"></script>
 
-    <div>
-        <input type="text" id="name"/>
-        <input type="number" id="priority"/>
-        <input type="date" id="duedate" />
-        <button type="button" onclick="addTodo()">Add</button>          <br />
+<div id="navbar" class="navbar">
+    <a href="" class="closebtn" onclick="closeNav()">&times;</a>
+    <input type="text" id="name" onkeydown="EnterButton()"/>
+    <input type="number" id="priority" onkeydown="EnterButton()"/>
+    <input type="date" id="duedate" onkeydown="EnterButton()"/>
+</div>
+
+    <div id="main">
+        <button type="button" onclick="openNav()">Add new input</button><br />
+        <button type="button" onclick="clearList()">Clear list</button>
     </div>
 
 <div>
     <ul id="myList">Lists</ul>
 </div>
 
+    <script src="../js/list.js"></script>
 </body>
 </html>

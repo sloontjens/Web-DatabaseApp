@@ -30,10 +30,18 @@ function addTodo() {
     var priority = document.getElementById("priority").value;
     var duedate = document.getElementById("duedate").value;
 
-    var todo = new Todo(name, priority, duedate);
+    if (duedate.length != 0) {
+        var todo = new Todo(name, priority, duedate);
+    } else {
+        todo = new Todo(name, priority, null)
+    }
 
     var node = document.createElement("li");
-    node.innerHTML = todo.priority + " [" + todo.name + "] Due: " + todo.duedate;
+    if (todo.duedate != null){
+            node.innerHTML = todo.priority + " [" + todo.name + "] Due: " + todo.duedate;
+    } else {
+        node.innerHTML = todo.priority + " [" + todo.name + "]";
+    }
 
     // Adds a remove button to the list
     var node2 = document.createElement("input");
@@ -50,14 +58,33 @@ function addTodo() {
  * @param ul The unsorted list that you want to sort on duedate.
  */
 function sortTodo_duedate(ul) {
-
 }
 
 
-function changeList() {
-    window.location.href = '../html/Home.html';
+function EnterButton() {
+    if (event.keyCode == 13){
+        addTodo();
+    }
 }
 
-function moveList() {
-    window.location.href = '../html/Home.html';
+
+function clearList() {
+    var ub = document.getElementById("myList").childElementCount;
+    for (var i = 0; i < ub+1; i++){
+        document.getElementById("myList").removeChild(document.getElementById("myList").firstChild);
+    }
+}
+
+
+/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("navbar").style.height = "50px";
+    document.getElementById("main").style.marginTop = "50px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("navbar").style.height = "50px";
+    document.getElementById("main").style.marginTop = "50px";
+
 }
