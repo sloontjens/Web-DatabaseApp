@@ -39,9 +39,9 @@ function addTodo(n) {
     var node2 = addStatus();
 
     if (todo.duedate != null){
-            node.innerHTML = todo.priority + " [" + todo.name + "] Due: " + todo.duedate;
+            node.appendChild(document.createTextNode(todo.priority + " [" + todo.name + "] Due: " + todo.duedate));
     } else {
-        node.innerHTML = todo.priority + " [" + todo.name + "]";
+        node.firstChild.appendChild(document.createTextNode(todo.priority + " [" + todo.name + "]"));
     }
 
     // Adds a remove button to the list
@@ -51,9 +51,10 @@ function addTodo(n) {
         document.getElementById("myList").removeChild(node);
     };
     node3.value = "Remove this element";
+    node.appendChild(document.createTextNode("test"));
+    node.appendChild(node2);
     node.appendChild(node3);
     document.getElementsByTagName("ul").item(n-1).appendChild(node);
-    node.appendChild(node2);
 }
 
 function addStatus() {

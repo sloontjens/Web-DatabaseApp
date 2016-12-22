@@ -5,6 +5,15 @@ div {
 
 body {
     overflow: hidden;
+    font-family: "Calibri";
+}
+
+li ::before{
+    content: "TODO:";
+}
+
+li ::after{
+    content: "Status:";
 }
 
 .no_border {
@@ -37,6 +46,15 @@ body {
     bottom: 18%;
     left: 5%;
     right: 5%;
+    padding: 1%;
+}
+
+.splash {
+    position: absolute;
+    top: 32%;
+    bottom: 48%;
+    left: 40%;
+    right: 40%;
     padding: 1%;
 }
 
