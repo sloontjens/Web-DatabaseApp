@@ -2,12 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <title>SplashScreen</title>
 </head>
 <body>
 
+<!--Script files to open-->
 <script src="../js/hoverhome.js"></script>
-<div onmouseover="myHoverButton()">Hover to move to Home.html</div>
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
+
+
+<div w3-include-html="Header.html" id="header"></div>
+
+    <div id="content">
+
+        <div onmouseover="myHoverButton()" id="hoverButton">Hover to move to Home.html</div>
+
+    </div>
+
+<div w3-include-html="Footer.html" id="footer"></div>
+
+
+<script>w3IncludeHTML();</script>
 
 </body>
 </html>

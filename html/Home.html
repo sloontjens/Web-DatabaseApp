@@ -20,29 +20,45 @@
 </style>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <title>HomeScreen</title>
 </head>
 <body>
-<div style="width: 50%; margin: auto; border: solid thin; text-align: center; padding: 10px; overflow: hidden" id="content">
-<div id="dropdown" class="dropdown">
-    <input type="radio" name="list" value="1" />List 1
-    <input type="radio" name="list" value="2" />List 2
-    <a href="" class="closebtn" onclick="closeDropDown()">&times;</a>
-    <input type="text" id="name" onkeydown="EnterButton()"/>
-    <input type="number" id="priority" onkeydown="EnterButton()"/>
-    <input type="date" id="duedate" onkeydown="EnterButton()"/>
-</div>
 
-    <div id="main" style="margin: auto; width: inherit; border: solid thin;">
-        <button type="button" onclick="openDropDown()">Add new input</button>
-        <button type="button" onclick="clearList(0)">Clear list</button>
-        <button type="button" onclick="newList()">New list</button>
+<!--Script files to open-->
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
+<script src="../js/list.js"></script>
+
+
+<div w3-include-html="Header.html" id="header"></div>
+
+    <div id="content">
+        <div id="dropdown" class="dropdown">
+            <input type="radio" name="list" value="1" />List 1
+            <input type="radio" name="list" value="2" />List 2
+
+            <a href="" class="closebtn" onclick="closeDropDown()">&times;</a>
+
+            <input type="text" id="name" onkeydown="EnterButton()"/>
+            <input type="number" id="priority" onkeydown="EnterButton()"/>
+            <input type="date" id="duedate" onkeydown="EnterButton()"/>
+        </div>
+
+            <div id="main" style="margin: auto; width: inherit; border: solid thin;">
+                <button type="button" onclick="openDropDown()">Add new input</button>
+                <button type="button" onclick="clearList(0)">Clear list</button>
+                <button type="button" onclick="newList()">New list</button>
+            </div>
+
+        <div class="list" id="list1">
+            <ul id="myList">List 1</ul>
+        </div>
     </div>
 
-<div style="border: solid thin; float: left; width: 30%; margin: 10px; text-align: left;" id="list1">
-    <ul id="myList">List 1</ul>
-</div>
-</div>
-    <script src="../js/list.js"></script>
+<div w3-include-html="Footer.html" id="footer"></div>
+
+
+<script>w3IncludeHTML();</script>
+
 </body>
 </html>

@@ -1,0 +1,68 @@
+div {
+    border: solid thin;
+}
+
+.list {
+    width: 30%;
+    height: 360px;
+    float: left;
+    text-align: left;
+    overflow: scroll
+}
+
+.dropdown {
+
+}
+
+#header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 8%;
+    padding: 1%;
+    background-color: #efefef;
+    text-align: center;
+    overflow: scroll;
+}
+
+#content {
+    position: absolute;
+    top: 18%;
+    bottom: 18%;
+    left: 5%;
+    width: 90%;
+    padding: 1%;
+    overflow: scroll;
+}
+
+#footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 8%;
+    padding: 1%;
+    background-color: #efefef;
+    text-align: center;
+    overflow: scroll;
+}
+
+#logoButton {
+    float: left;
+    margin: 4px;
+}
+
+#searchButton {
+    float: left;
+    margin: 4px;
+}
+
+#loginButton {
+    float: right;
+    margin: 4px;
+}
+
+#hoverButton {
+    margin: 4px;
+}
