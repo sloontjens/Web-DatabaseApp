@@ -2,13 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <title>SplashScreen</title>
 </head>
 <body>
+    <div class="splash" onmouseover="myHoverButton()">
+        Hover to move to our TODO app
+    </div>
 
-    <script src="../js/myscripts.js"></script>
+<div w3-include-html="Footer.html" class="footer"></div>
 
-<div onmouseover="myHoverButton()">Hover to move to Home.html</div>
+
+<!--Script files to open-->
+<script src="../js/hoverhome.js"></script>
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
+<script>w3IncludeHTML();</script>
 
 </body>
 </html>

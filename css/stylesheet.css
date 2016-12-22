@@ -1,0 +1,132 @@
+div {
+    border: solid thin;
+    padding: 1px;
+}
+
+body {
+    overflow: hidden;
+    font-family: "Calibri";
+}
+
+li ::before{
+    content: "TODO:";
+}
+
+li ::after{
+    content: "Status:";
+}
+
+.no_border {
+    border: none;
+}
+
+#main {
+    transition: 0.5s;
+    text-align: center;
+    border: solid thin;
+    margin: 2px 30px;
+}
+
+.list {
+    width: 30%;
+    height: 360px;
+    float: left;
+    text-align: left;
+    overflow: hidden;
+    margin: 1%;
+}
+
+#list1 {
+    /*For testing */
+}
+
+.content {
+    position: absolute;
+    top: 18%;
+    bottom: 18%;
+    left: 5%;
+    right: 5%;
+    padding: 1%;
+}
+
+.splash {
+    position: absolute;
+    top: 32%;
+    bottom: 48%;
+    left: 40%;
+    right: 40%;
+    padding: 1%;
+}
+
+#dropdwn {
+    height: 0; /* Changes with JS */
+    text-align: center;
+    z-index: -1;
+    transition: visibility 0.3s, height 0.5s;
+    padding-top: 3px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    border: hidden;
+    visibility: hidden;
+}
+
+#header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 8%;
+    padding: 1%;
+    background-color: #efefef;
+    text-align: center;
+    border: none;
+    border-bottom: solid thin;
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 8%;
+    padding: 1%;
+    background-color: #efefef;
+    text-align: center;
+    border: none;
+    border-top: solid thin;
+}
+
+#logoButton {
+    float: left;
+    margin: 4px;
+}
+
+#searchButton {
+    float: left;
+    margin: 4px;
+}
+
+#loginButton {
+    float: right;
+    margin: 4px;
+}
+
+#hoverButton {
+    margin: 4px;
+}
+
+#name {
+    width: 50%;
+    height: 100%;
+}
+
+#priority {
+    width: 40px;
+    overflow: hidden;
+    height: 100%;
+}
+
+#duedate {
+    width: 25%;
+    height: 100%;
+}

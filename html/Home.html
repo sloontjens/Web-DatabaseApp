@@ -1,21 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <title>HomeScreen</title>
 </head>
 <body>
-    <script src="../js/myscripts.js"></script>
-
-    <div>
-    <button type="button" onclick="addList()">Add</button>          <br />
-    <button type="button" onclick="changeList()">Change</button>    <br />
-    <button type="button" onclick="removeList()">Remove</button>
+<div w3-include-html="Header.html" id="header"></div>
+<div class="content">
+    <div class="list" id="list1">
+        <div class="dropdwn" id="dropdwn">
+            <span id="close_dropdwn">&times;</span>
+            <input type="number" id="priority"/>
+            <input type="text" id="name"/>
+            <input type="date" id="duedate"/>
+        </div>
+        <div class="footer">
+            <button id="">Add new input</button>
+            <button type="button" onclick="clearList(0)">Clear list</button>
+        </div>
+        <ul id="myList">List 1</ul>
+        <div class="footer">
+            <button id="add_new_input">Add new input</button>
+            <button type="button" onclick="clearList(0)">Clear list</button>
+            <button type="button" onclick="newList()">New list</button>
+        </div>
+    </div>
 </div>
 
-<div>
-    <p>Lists</p>
-</div>
+<div w3-include-html="Footer.html" class="footer"></div>
+
+
+<!--Script files to open-->
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
+<script src="../js/list.js"></script>
+<script src="../js/events.js"></script>
+<script>w3IncludeHTML();</script>
+<!--<script>
+    function openDropDown() {
+    document.getElementById('dropdwn').style.height = '100px';
+}</script>*/-->
 
 </body>
 </html>
