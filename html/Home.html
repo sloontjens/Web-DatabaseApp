@@ -1,64 +1,45 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
-<style>
-
-    .dropdown {
-        height: 0; /* Changes with JS */
-        width: 100%;
-        position: inherit; /* Stay in place */
-        z-index: 1; /* Stay on top */
-        top: 0;
-        left: 0;
-        overflow-x: hidden; /* Disable horizontal scroll */
-        transition: 0.5s;
-        padding-top: 3px;
-    }
-
-    #main {
-        transition: margin-top .5s;
-    }
-</style>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <title>HomeScreen</title>
 </head>
 <body>
+<div w3-include-html="Header.html" id="header"></div>
+<div class="content">
+    <div class="list" id="list1">
+        <div class="dropdwn" id="dropdwn">
+            <span id="close_dropdwn">&times;</span>
+            <input type="number" id="priority"/>
+            <input type="text" id="name"/>
+            <input type="date" id="duedate"/>
+        </div>
+        <div class="footer">
+            <button id="">Add new input</button>
+            <button type="button" onclick="clearList(0)">Clear list</button>
+        </div>
+        <ul id="myList">List 1</ul>
+        <div class="footer">
+            <button id="add_new_input">Add new input</button>
+            <button type="button" onclick="clearList(0)">Clear list</button>
+            <button type="button" onclick="newList()">New list</button>
+        </div>
+    </div>
+</div>
+
+<div w3-include-html="Footer.html" class="footer"></div>
+
 
 <!--Script files to open-->
 <script src="http://www.w3schools.com/lib/w3data.js"></script>
 <script src="../js/list.js"></script>
-
-
-<div w3-include-html="Header.html" id="header"></div>
-
-    <div id="content">
-        <div id="dropdown" class="dropdown">
-            <input type="radio" name="list" value="1" />List 1
-            <input type="radio" name="list" value="2" />List 2
-
-            <a href="" class="closebtn" onclick="closeDropDown()">&times;</a>
-
-            <input type="text" id="name" onkeydown="EnterButton()"/>
-            <input type="number" id="priority" onkeydown="EnterButton()"/>
-            <input type="date" id="duedate" onkeydown="EnterButton()"/>
-        </div>
-
-            <div id="main" style="margin: auto; width: inherit; border: solid thin;">
-                <button type="button" onclick="openDropDown()">Add new input</button>
-                <button type="button" onclick="clearList(0)">Clear list</button>
-                <button type="button" onclick="newList()">New list</button>
-            </div>
-
-        <div class="list" id="list1">
-            <ul id="myList">List 1</ul>
-        </div>
-    </div>
-
-<div w3-include-html="Footer.html" id="footer"></div>
-
-
+<script src="../js/events.js"></script>
 <script>w3IncludeHTML();</script>
+<!--<script>
+    function openDropDown() {
+    document.getElementById('dropdwn').style.height = '100px';
+}</script>*/-->
 
 </body>
 </html>

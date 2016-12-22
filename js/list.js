@@ -54,7 +54,6 @@ function addTodo(n) {
     node.appendChild(node3);
     document.getElementsByTagName("ul").item(n-1).appendChild(node);
     node.appendChild(node2);
-
 }
 
 function addStatus() {
@@ -71,24 +70,6 @@ function addStatus() {
     return span;
 }
 
-/**
- * Creates a new list
- */
-function newList() {
-    var node = document.createElement("ul");
-    var n = document.getElementsByTagName("ul").length+1;
-    node.innerHTML = "List " + n;
-    var node2 = document.createElement("div");
-    node2.style.border = "solid thin";
-    node2.style.float = "left";
-    node2.style.width = "30%";
-    node2.style.margin = "10px";
-    node2.style.textAlign = "left";
-    node2.appendChild(node);
-    document.getElementById("content").appendChild(node2);
-
-
-}
 
 /**
  * onclick function for ENTER key
@@ -102,8 +83,10 @@ function EnterButton() {
                 }
             }
         });
+        closeDropDown();
     }
 }
+
 
 /**
  * Clears the n-th list.
@@ -116,16 +99,4 @@ function clearList(n) {
     }
 }
 
-/**
- * Opens the dropdown bar
- */
-function openDropDown() {
-    document.getElementById("dropdown").style.height = "25px";
-    document.getElementById("main").style.marginTop = "25px";
-}
 
-function closeDropDown() {
-    document.getElementById("dropdown").style.height = "25px";
-    document.getElementById("main").style.marginTop = "25px";
-
-}

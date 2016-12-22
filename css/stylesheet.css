@@ -1,5 +1,21 @@
 div {
     border: solid thin;
+    padding: 1px;
+}
+
+body {
+    overflow: hidden;
+}
+
+.no_border {
+    border: none;
+}
+
+#main {
+    transition: 0.5s;
+    text-align: center;
+    border: solid thin;
+    margin: 2px 30px;
 }
 
 .list {
@@ -7,11 +23,33 @@ div {
     height: 360px;
     float: left;
     text-align: left;
-    overflow: scroll
+    overflow: hidden;
+    margin: 1%;
 }
 
-.dropdown {
+#list1 {
+    /*For testing */
+}
 
+.content {
+    position: absolute;
+    top: 18%;
+    bottom: 18%;
+    left: 5%;
+    right: 5%;
+    padding: 1%;
+}
+
+#dropdwn {
+    height: 0; /* Changes with JS */
+    text-align: center;
+    z-index: -1;
+    transition: visibility 0.3s, height 0.5s;
+    padding-top: 3px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    border: hidden;
+    visibility: hidden;
 }
 
 #header {
@@ -23,20 +61,11 @@ div {
     padding: 1%;
     background-color: #efefef;
     text-align: center;
-    overflow: scroll;
+    border: none;
+    border-bottom: solid thin;
 }
 
-#content {
-    position: absolute;
-    top: 18%;
-    bottom: 18%;
-    left: 5%;
-    width: 90%;
-    padding: 1%;
-    overflow: scroll;
-}
-
-#footer {
+.footer {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -45,7 +74,8 @@ div {
     padding: 1%;
     background-color: #efefef;
     text-align: center;
-    overflow: scroll;
+    border: none;
+    border-top: solid thin;
 }
 
 #logoButton {
@@ -65,4 +95,20 @@ div {
 
 #hoverButton {
     margin: 4px;
+}
+
+#name {
+    width: 50%;
+    height: 100%;
+}
+
+#priority {
+    width: 40px;
+    overflow: hidden;
+    height: 100%;
+}
+
+#duedate {
+    width: 25%;
+    height: 100%;
 }
