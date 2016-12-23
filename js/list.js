@@ -1,62 +1,124 @@
 /**
  * @author Auke Schaap
+ * @author Sam Loontjens
  */
 
-var todo_list = [];
+/**
+ * holds the number of lists made
+ */
+var list_count = 0;
+
+var todo_count = 0;
+
+/**
+ * @constructor
+ *
+ * Creates a list which holds todos
+ *
+ */
+function newList() {
+    //add id to the list
+    list_count += 1;
+    var list_number = list_count;
+
+    //create new div
+    var node = document.createElement("div");
+    //with the id of list1, list2, etc
+    node.id = "list" + list_number;
+    node.className = "list";
+    node.onkeydown = function () {
+        //if the enter key is pressed
+        if (event.keyCode == 13){
+            //add a todo_item to the list
+            newTodo(node.id);
+        }
+    }
+
+    var node2 = document.createElement("INPUT");
+    node2.setAttribute("type", "text");
+    node2.id = "name" + list_number;
+
+
+    var node3 = document.createElement("INPUT");
+    node3.setAttribute("type", "number");
+    node3.id = "importance" + list_number;
+
+    var node4 = document.createElement("INPUT");
+    node4.setAttribute("type", "date");
+    node4.id = "duedate" + list_number;
+
+    var node5 = document.createElement("BUTTON");
+    node5.setAttribute("type", "button");
+    node5.id = "addbutton" + list_number;
+    node5.innerHTML = "Add to list";
+    node5.onclick = function () {
+        newTodo(node.id);
+    };
+
+    var node6 = document.createElement("BUTTON");
+    node6.setAttribute("type", "button");
+    node6.id = "addbutton" + list_number;
+    node6.innerHTML = "Remove list";
+    node6.onclick = function () {
+        document.getElementById("content").removeChild(node);
+    };
+
+    //create a ul list
+    var node7 = document.createElement("ul");
+    node7.innerHTML = "List " + list_number;
+
+    //node 1 gets node 2 and content gets all.
+    node.appendChild(node2);
+    node.appendChild(node3);
+    node.appendChild(node4);
+    node.appendChild(node5);
+    node.appendChild(node6);
+    node.appendChild(node7);
+    document.getElementById("lists").appendChild(node);
+}
 
 /**
  * @constructor
  *
  * Creates a to do which holds a name, priority and a due date
  *
- * @param name
- * @param priority
- * @param duedate
+ * @param list_id
  */
-function Todo(name, priority, duedate) {
-    this.name = name;
-    this.priority = priority;
-    this.duedate = duedate;
-    todo_list.push(this);
-}
+function newTodo(list_id) {
+    //add to counter
+    todo_count += 1;
+    var todo_number = todo_count;
 
-/**
- * Adds an textual input item to the n-th list and a button to remove it.
- */
-function addTodo(n) {
+    //get the number of the list to add to
+    var list_number = list_id.replace('list','');
 
-    var name = document.getElementById("name").value;
-    var priority = document.getElementById("priority").value;
-    var duedate = document.getElementById("duedate").value;
+    var name = document.getElementById("name"+ list_number).value;
+    var priority = document.getElementById("importance"+ list_number).value;
+    var duedate = document.getElementById("duedate"+ list_number).value;
 
-    if (duedate.length != 0) {
-        var todo = new Todo(name, priority, duedate);
-    } else {
-        todo = new Todo(name, priority, null)
-    }
-
+    //create li element as node 1
     var node = document.createElement("li");
+    node.id = "todo" + todo_number;
+    node.className = "todo";
+    node.innerHTML = todo_number +" Priority: "+ priority + " Date: "+ duedate + " " + name;
     var node2 = addStatus();
 
-    if (todo.duedate != null){
-            node.appendChild(document.createTextNode(todo.priority + " [" + todo.name + "] Due: " + todo.duedate));
-    } else {
-        node.firstChild.appendChild(document.createTextNode(todo.priority + " [" + todo.name + "]"));
-    }
-
-    // Adds a remove button to the list
+    //a remove button as node 2
     var node3 = document.createElement("input");
     node3.type = "button";
     node3.onclick = function () {
-        document.getElementById("myList").removeChild(node);
+        document.getElementById(list_id).removeChild(node);
     };
     node3.value = "Remove this element";
-    node.appendChild(document.createTextNode("test"));
+
     node.appendChild(node2);
     node.appendChild(node3);
-    document.getElementsByTagName("ul").item(n-1).appendChild(node);
+    document.getElementById(list_id).appendChild(node);
 }
 
+/**
+ * Creates status button
+ */
 function addStatus() {
     var span = document.createElement("span");
     var todo = "[TODO]";
@@ -71,33 +133,14 @@ function addStatus() {
     return span;
 }
 
-
-/**
- * onclick function for ENTER key
- */
-function EnterButton() {
-    if (event.keyCode == 13){
-        addTodo(function () {
-            for (i=0; i<document.getElementsByName("list").length; i++) {
-                if (document.getElementsByName("list").item(i).checked = true) {
-                    return document.getElementsByName("list").item(i);
-                }
-            }
-        });
-        closeDropDown();
-    }
-}
-
-
 /**
  * Clears the n-th list.
- * @param n
+ *
  */
-function clearList(n) {
-    var ub = document.getElementById("myList").childElementCount;
-    for (var i = 0; i < ub; i++){
-        document.getElementById("myList").removeChild(document.getElementsByTagName("ul").item(n).lastChild);
+function removeAll() {
+    var myNode = document.getElementById("lists");
+    while (myNode.firstChild) {
+        myNode.removeChild(myNode.firstChild);
     }
 }
-
 

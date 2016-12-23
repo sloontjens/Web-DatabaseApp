@@ -3,71 +3,39 @@ div {
     padding: 1px;
 }
 
-body {
-    overflow: hidden;
-    font-family: "Calibri";
-}
-
-li ::before{
-    content: "TODO:";
-}
-
-li ::after{
-    content: "Status:";
-}
-
-.no_border {
-    border: none;
-}
-
-#main {
-    transition: 0.5s;
+a:link, a:visited {
+    background-color: black;
+    color: white;
     text-align: center;
-    border: solid thin;
-    margin: 2px 30px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    color: aquamarine;
 }
 
 .list {
-    width: 30%;
-    height: 360px;
+    height: 50%;
     float: left;
     text-align: left;
-    overflow: hidden;
-    margin: 1%;
+    overflow: scroll;
+    width: 30%;
+    margin: 10px;
+    background-color: aquamarine;
+    padding: 0.4%;
 }
 
-#list1 {
-    /*For testing */
+#mainMenu {
+    top: 9%;
+    height: 4%;
+    margin: 0.4%;
 }
 
-.content {
-    position: absolute;
-    top: 18%;
-    bottom: 18%;
-    left: 5%;
-    right: 5%;
-    padding: 1%;
-}
-
-.splash {
-    position: absolute;
-    top: 32%;
-    bottom: 48%;
-    left: 40%;
-    right: 40%;
-    padding: 1%;
-}
-
-#dropdwn {
-    height: 0; /* Changes with JS */
-    text-align: center;
-    z-index: -1;
-    transition: visibility 0.3s, height 0.5s;
-    padding-top: 3px;
-    padding-bottom: 10px;
-    overflow: hidden;
-    border: hidden;
-    visibility: hidden;
+#lists {
+    top: 15%;
+    height: 92%;
+    margin: 0.4%;
 }
 
 #header {
@@ -75,58 +43,56 @@ li ::after{
     top: 0;
     right: 0;
     left: 0;
-    height: 8%;
-    padding: 1%;
+    height: 6%;
+    padding: 0.4%;
     background-color: #efefef;
     text-align: center;
-    border: none;
-    border-bottom: solid thin;
+    overflow: hidden;
 }
 
-.footer {
+#content {
+    position: absolute;
+    top: 8%;
+    bottom: 6%;
+    left: 5%;
+    width: 90%;
+    padding: 2px;
+    overflow: scroll;
+}
+
+#footer {
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
-    height: 8%;
-    padding: 1%;
+    height: 4%;
+    padding: 0.4%;
     background-color: #efefef;
     text-align: center;
-    border: none;
-    border-top: solid thin;
+    overflow: hidden;
 }
 
 #logoButton {
     float: left;
-    margin: 4px;
+    margin: 2px;
+    padding: 2px;
+    background-color: black;
+    text-decoration-color: azure;
 }
 
-#searchButton {
+.floatLeft {
     float: left;
-    margin: 4px;
+    margin: 2px;
+    padding: 2px;
 }
 
-#loginButton {
+.floatRight {
     float: right;
-    margin: 4px;
+    margin: 2px;
+    padding: 2px;
 }
 
-#hoverButton {
-    margin: 4px;
-}
-
-#name {
-    width: 50%;
-    height: 100%;
-}
-
-#priority {
-    width: 40px;
-    overflow: hidden;
-    height: 100%;
-}
-
-#duedate {
-    width: 25%;
-    height: 100%;
+.floatNone {
+    margin: 2px;
+    padding: 2px;
 }

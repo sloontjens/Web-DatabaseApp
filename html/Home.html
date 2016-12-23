@@ -7,23 +7,20 @@
 </head>
 <body>
 <div w3-include-html="Header.html" id="header"></div>
-<div class="content">
-    <div class="list" id="list1">
-        <div class="dropdwn" id="dropdwn">
-            <span id="close_dropdwn">&times;</span>
-            <input type="number" id="priority"/>
-            <input type="text" id="name"/>
-            <input type="date" id="duedate"/>
-        </div>
-        <div class="footer">
-            <button id="">Add new input</button>
-            <button type="button" onclick="clearList(0)">Clear list</button>
-        </div>
-        <ul id="myList">List 1</ul>
-        <div class="footer">
-            <button id="add_new_input">Add new input</button>
-            <button type="button" onclick="clearList(0)">Clear list</button>
+
+
+    <div id="content">
+
+        <div id="mainMenu">
             <button type="button" onclick="newList()">New list</button>
+
+
+
+            <button type="button" onclick="removeAll()">Remove All</button>
+        </div>
+
+        <div id="lists">
+
         </div>
     </div>
 </div>
@@ -34,12 +31,7 @@
 <!--Script files to open-->
 <script src="http://www.w3schools.com/lib/w3data.js"></script>
 <script src="../js/list.js"></script>
-<script src="../js/events.js"></script>
 <script>w3IncludeHTML();</script>
-<!--<script>
-    function openDropDown() {
-    document.getElementById('dropdwn').style.height = '100px';
-}</script>*/-->
 
 </body>
 </html>
