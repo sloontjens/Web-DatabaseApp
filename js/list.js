@@ -37,8 +37,7 @@ function newList() {
     var node2 = document.createElement("INPUT");
     node2.setAttribute("type", "text");
     node2.id = "name" + list_number;
-
-
+    
     var node3 = document.createElement("INPUT");
     node3.setAttribute("type", "number");
     node3.id = "importance" + list_number;
