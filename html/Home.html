@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <title>HomeScreen</title>
 </head>
 <body>
-<div w3-include-html="Header.html" id="header"></div>
+<!--Script files to open-->
+<script src="../js/list.js"></script>
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
 
+
+<div w3-include-html="Header.html" id="header"></div>
 
     <div id="content">
 
         <div id="mainMenu">
             <button type="button" onclick="newList()">New list</button>
-
-
 
             <button type="button" onclick="removeAll()">Remove All</button>
         </div>
@@ -25,13 +27,9 @@
     </div>
 </div>
 
-<div w3-include-html="Footer.html" class="footer"></div>
+<div w3-include-html="Footer.html" id="footer"></div>
 
 
-<!--Script files to open-->
-<script src="http://www.w3schools.com/lib/w3data.js"></script>
-<script src="../js/list.js"></script>
 <script>w3IncludeHTML();</script>
-
 </body>
 </html>
