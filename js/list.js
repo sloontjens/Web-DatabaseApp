@@ -60,7 +60,7 @@ function newList() {
     node6.id = "addbutton" + list_number;
     node6.innerHTML = "Remove list";
     node6.onclick = function () {
-        document.getElementById("content").removeChild(node);
+        document.getElementById("lists").removeChild(node);
     };
 
     //create a ul list
@@ -143,4 +143,3 @@ function removeAll() {
         myNode.removeChild(myNode.firstChild);
     }
 }
-
